@@ -1,11 +1,16 @@
 import { useState } from "react";
+import Cards from "./Cards.jsx";
+import Cantainer from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import profile_pic_1 from "../assets/1.png";
+import profile_pic_2 from "../assets/2.jpg";
+import profile_pic_3 from "../assets/3.png";
 
 function Main() {
     const list = [
-        { id: 1, name: 'Amir' },
-        { id: 2, name: 'Dan' },
-        { id: 3, name: 'Patrik' },
-        { id: 4, name: 'Fanda' },
+        { id: 1, name: 'Amir', age: 19, student: true, img: profile_pic_1 },
+        { id: 2, name: 'Dan', age: 18, student: true, img: profile_pic_2 },
+        { id: 3, name: 'Fanda', age: 21, student: true, img: profile_pic_3 },
     ]
 
     const [selectedItem, setSelectedItem] = useState(-1) // hook
@@ -15,7 +20,7 @@ function Main() {
     return (
         <>
             {validation}
-            <ul className="list-group">
+            <ul>
                 {list.map((item, index) => (
                     <li 
                         className={selectedItem === index ? 'list-groud-item active' : 'list-group-item'}
@@ -26,7 +31,14 @@ function Main() {
                         {item.name}
                     </li>
                 ))}
-            </ul>
+            </ul> <br />
+            <Cantainer>
+                <Row>
+                    {list.map((item) => (
+                        <Cards name={item.name} age={item.age} student={item.student} img={item.img}/>
+                    ))}
+                </Row>
+            </Cantainer>
         </>
     );
 }
