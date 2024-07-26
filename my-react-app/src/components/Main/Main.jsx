@@ -10,12 +10,20 @@ function Main() {
     const list = [
         { id: 1, name: 'Amir', age: 19, student: true, img: profile_pic_1 },
         { id: 2, name: 'Dan', age: 18, student: true, img: profile_pic_2 },
-        { id: 3, name: 'Fanda', age: 21, student: true, img: profile_pic_3 },
+        { id: 3, name: 'Fanda', age: 21, student: false, img: profile_pic_3 },
+        { id: 4, name: 'John', age: 17, student: false, img: profile_pic_1 },
     ]
 
     const [selectedItem, setSelectedItem] = useState(-1) // hook
 
     const validation = list.length === 0 && <p>There are no items in the list</p>
+
+    // list.sort((a, b) => a.name.localeCompare(b.name))
+    list.sort((a, b) => a.age - b.age)
+
+    const adult = list.filter(item => item.age >= 18 && item.student)
+
+    const listItem = adult.map(item => <li key={item.id}>{item.name}</li>)
 
     return (
         <>
@@ -32,6 +40,13 @@ function Main() {
                     </li>
                 ))}
             </ul> <br />
+
+            
+            <h4>Adult student</h4>
+            <ul>
+                {listItem}
+            </ul>
+
             <Cantainer>
                 <Row>
                     {list.map((item) => (
