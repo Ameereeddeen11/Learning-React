@@ -18,7 +18,7 @@ function Header(props) {
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Collapse className="justify-content-end">
-                        <UserLoggedIn name="Amir" isLoggedIn={false}></UserLoggedIn>
+                        <UserLoggedIn name="Amir" isLoggedIn={true}></UserLoggedIn>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
