@@ -2,9 +2,9 @@ import { useState } from "react";
 import Cards from "./Cards.jsx";
 import Cantainer from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import profile_pic_1 from "../assets/1.png";
-import profile_pic_2 from "../assets/2.jpg";
-import profile_pic_3 from "../assets/3.png";
+import profile_pic_1 from "./img/1.png";
+import profile_pic_2 from "./img/2.jpg";
+import profile_pic_3 from "./img/3.png";
 
 function Main() {
     const list = [
