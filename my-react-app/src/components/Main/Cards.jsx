@@ -1,7 +1,8 @@
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import Col from "react-bootstrap/Col";
+import Buttons from "./Button.jsx";
 
 function Cards(props) {
     return (
@@ -15,7 +16,7 @@ function Cards(props) {
                             {props.age}<br/>
                             {props.student ? 'Student' : 'Not Student'}
                         </Card.Text>
-                        <Button variant="primary">More About</Button>
+                        <Buttons/>
                     </Card.Body>
                 </Card>
             </Col>
