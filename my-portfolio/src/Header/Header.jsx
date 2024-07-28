@@ -8,9 +8,9 @@ function Header(props) {
     ))
     return (
         <>
-            <Navbar>
+            <Navbar fixed='top' bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand>Amiriddin Abdullaev</Navbar.Brand>
+                    <Navbar.Brand>Welcome to Amir's Portfolio</Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className='me-auto'>
