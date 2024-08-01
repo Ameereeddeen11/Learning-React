@@ -1,5 +1,5 @@
-import AboutMe from "./About/AboutMe.jsx"
-import SkillSet from "./About/SkillSet.jsx"
+import SkillSet from "./components/SkillSet.jsx"
+import { Row, Container } from "react-bootstrap";
 
 const skillset = [
     { name: 'JavaScript', level: '50%'},
@@ -11,8 +11,8 @@ const skillset = [
     { name: 'C#', level: '50%'},
     { name: 'ASP,NET', level: '30%'},
     { name: 'Go', level: '20%'},
-  ]
-  
+]
+
 const tools = ["VS Code", "PyCharm", "Postman", "Docker", "Heroku", "AWS", "Azure", "Visual Studio"]
   
 const projects = [
@@ -28,13 +28,21 @@ const projects = [
     { name: 'Project 10', description: 'This is a project', link: ''},
   ]  
 
-function Main() {
+
+const cards = skillset.map((skill) => (
+    <SkillSet skillset={skill} />
+))
+
+function AboutMe() {
     return (
         <>
-            <AboutMe />
-            <SkillSet skillset={skillset} tools={tools} projects={projects} githubactivite="https://raw.githubusercontent.com/Ameereeddeen11/Ameereeddeen11/output/github-contribution-grid-snake.svg" />
+            <Container>
+                <Row className="my-4">
+                    {cards}
+                </Row>
+            </Container>
         </>
     );
 }
 
-export default Main;
+export default AboutMe;

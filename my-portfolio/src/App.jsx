@@ -1,19 +1,20 @@
 import './App.css';
 import Header from './Header/Header.jsx';
-import Main from './Main/Main.jsx';
+import Main from './Pages/Main.jsx';
+import About from './Pages/AboutMe.jsx';
 import { Route, Routes } from 'react-router-dom';
-import About from './Main/About/AboutMe.jsx'
 
-const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact']
+const navLinks = ['Home', 'AboutMe', 'Skills', 'Projects', 'Contact']
 
 function App() {
 
   return (
     <>
       <Header name={navLinks}/>
+      <br /><br /><br />
       <Routes>
-        <Route path='/' element={<Main/>}/>
-        <Route path='/aboutme' element={<About/>}/>
+        <Route path='home/' element={<Main/>}/>
+        <Route path='aboutme/' element={<About/>}/>
       </Routes>
     </>
   )

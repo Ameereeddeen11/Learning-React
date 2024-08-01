@@ -1,10 +1,11 @@
 import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Header(props) {
     const navLinks = props.name.map((item, index) => (
-        <Nav.Item><Nav.Link key={index} href={'#' + item.toLowerCase()}>{item}</Nav.Link></Nav.Item>
+        <Nav.Item><Link to={item.toLowerCase() + "/"}><Nav.Link key={index}>{item}</Nav.Link></Link></Nav.Item>
     ))
     return (
         <>
