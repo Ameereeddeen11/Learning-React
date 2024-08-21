@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 function Header(props) {
     const navLinks = props.name.map((item, index) => (
-        <Nav.Item><Link to={item.toLowerCase() + "/"}><Nav.Link key={index}>{item}</Nav.Link></Link></Nav.Item>
+        <Link key={index} to={item.toLowerCase() + "/"} className='nav-link'>{item}</Link>
     ))
     return (
         <>
             <Navbar fixed='top' bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand>Welcome to Amir's Portfolio</Navbar.Brand>
+                    <Link to="home/" className='nav-link'><Navbar.Brand>Welcome to Amir's Portfolio</Navbar.Brand></Link>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className='me-auto'>

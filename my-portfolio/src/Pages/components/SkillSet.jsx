@@ -1,17 +1,16 @@
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Card } from "react-bootstrap";
+import { Col, Card, ProgressBar } from "react-bootstrap";
 
 function SkillSet(props) {
+    const level = props.skillset.level
     return (
         <>
             <Col>
-                <Card bg='primary' key={props.skillset.name} text="white" style={{width: '18em'}} className="my-3">
+                <Card bg="dark" key={props.skillset.name} text="white" style={{width: '15em'}} className="my-3 p-4">
+                    <Card.Img variant="top" src={"https://skillicons.dev/icons?i="+props.skillset.img}/>
                     <Card.Body>
                         <Card.Title>{ props.skillset.name }</Card.Title>
                         <Card.Text>
-                            { props.skillset.level }
+                            <ProgressBar now={level} label={level + "%"}/>
                         </Card.Text>
                     </Card.Body>
                 </Card>
