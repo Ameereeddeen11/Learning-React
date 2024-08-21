@@ -1,6 +1,7 @@
-import SkillSet from "./components/SkillSet.jsx"
+import Cards from "./components/Cards.jsx";
 import { Row, Container } from "react-bootstrap";
-import './components/SkillSet.css'
+import GitHubCalendar from 'react-github-calendar';
+
 const skillset = [
     { name: 'JavaScript', level: '20', img: 'javascript' },
     { name: 'React', level: '20', img: 'react' },
@@ -14,41 +15,44 @@ const skillset = [
     { name: 'SQLAlchemy', level: '30', img: 'sqlalchemy' },
 ]
 
-const tools = ["VS Code", "PyCharm", "Postman", "Docker", "Heroku", "AWS", "Azure", "Visual Studio"]
-  
-const projects = [
-    { name: 'Project 1', description: 'This is a project', link: ''},
-    { name: 'Project 2', description: 'This is a project', link: ''},
-    { name: 'Project 3', description: 'This is a project', link: ''},
-    { name: 'Project 4', description: 'This is a project', link: ''},
-    { name: 'Project 5', description: 'This is a project', link: ''},
-    { name: 'Project 6', description: 'This is a project', link: ''},
-    { name: 'Project 7', description: 'This is a project', link: ''},
-    { name: 'Project 8', description: 'This is a project', link: ''},
-    { name: 'Project 9', description: 'This is a project', link: ''},
-    { name: 'Project 10', description: 'This is a project', link: ''},
-  ]  
-
+const tools = [
+    {name: "VS Code", img: "vscode"}, 
+    {name: "PyCharm", img: "pycharm"}, 
+    {name: "Postman", img: "postman"}, 
+    {name: "Docker", img: "docker"}, 
+    {name: "Heroku", img: "heroku"}, 
+    {name: "AWS", img: "aws"}, 
+    {name: "Azure", img: "azure"}, 
+    {name: "Visual Studio", img: "vs"},
+]
 
 const cards = skillset.map((skill) => (
-    <SkillSet skillset={skill} />
-))
+    <Cards skillset={skill} />
+)) 
 
-const tooList = tools.map((tool) => (
-    <li>{tool}</li>
+const toolList = tools.map((tool) => (
+    <Cards skillset={tool} />
 ))
 
 function AboutMe() {
     return (
         <>
             <Container>
-                <Row className="my-4">
+                <Row className="my-5" align="center">
+                    <h1>Education</h1>
+                    <p>Currently I am a student at the SOS and SOU Neratovice.</p>
+                </Row>
+                <Row className="my-5" align="center">
                     <h1>My Skills</h1>
                     {cards}
                 </Row>
-                <Row className="my-4">
+                <Row className="my-5" align="center">
                     <h1>Tools that I usualy use</h1>
-                    {tooList}
+                    {toolList}
+                </Row>
+                <Row className="my-5" align="center">
+                    <h1>My Contributions</h1>
+                    <GitHubCalendar username="Ameereeddeen11" blockSize={15} blockMargin={5} color="#c084f5" fontSize={16}/>
                 </Row>
             </Container>
         </>
